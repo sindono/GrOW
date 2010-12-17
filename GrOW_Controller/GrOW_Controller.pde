@@ -415,10 +415,10 @@ logDataString += DeviceName;
 logDataString += ",";
 
 int wholeDegrees = temp_val;         // temp_val is a float, with 2 decimals. Multiply by 10 and put it in an int, means losing the last decimal
-int decimalDegrees = (temp_val * 100) - (wholeDegrees * 100);
+int decimalDegrees = (temp_val * 100) - (wholeDegrees * 100);             
 logDataString += wholeDegrees;       // add whole degrees
 logDataString += ".";                // decimal point
-logDataString += decimalDegrees;     // and fractional degrees
+logDataString += abs(decimalDegrees);     // and fractional degrees. 17-12-2010: If temperature is negative, the minus sign is removed from the decimals
 logDataString += ",";
 logDataString += light_val;          // ambientlight value
 logDataString += ",";
